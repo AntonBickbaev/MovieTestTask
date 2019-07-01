@@ -61,7 +61,7 @@ class PopularMovieMapperImpl @Inject constructor() : PopularMovieMapper {
 
             } as ArrayList<PopularMovieItem>
             val isNetworkError = throwable is UnknownHostException
-            emmiter.onSuccess(MovieInfo(throwable = throwable, popularMovieItem = resultList, isError = isNetworkError))
+            emmiter.onSuccess(MovieInfo(throwableMsg = throwable?.message, popularMovieItem = resultList, isNetworkError = isNetworkError))
 
         }
     }

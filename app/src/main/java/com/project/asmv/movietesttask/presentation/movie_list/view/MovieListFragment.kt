@@ -16,12 +16,10 @@ import javax.inject.Inject
 class MovieListFragment : BaseFragment(), MovieListView {
 
     companion object {
-
         fun newInstance(): MovieListFragment {
             return MovieListFragment()
         }
     }
-
 
     @Inject
     lateinit var movieListPresenter: MovieListPresenter
@@ -66,7 +64,7 @@ class MovieListFragment : BaseFragment(), MovieListView {
         swipeRefresh?.isRefreshing = false
     }
 
-    override fun errorSnackBar(text: Int) {
+    override fun errorSnackBar(text: String) {
         swipeRefresh?.isRefreshing = false
         view?.let {
             val snackbar = Snackbar

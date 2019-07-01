@@ -4,4 +4,6 @@
     <string name="unknown_host_exception"> Проверить ваше интеренет соединение и попробуйте сново</string>
     <string name="unknown_exception"> Упсс что то пошло не так :(((</string>
     <string name="btn_retry">Повторить</string>
+    <string name="error_auth">Ошибка авторизации</string>
+    <string name="error_service_connection">Ошибка соединения с сервером</string>
 </resources>
