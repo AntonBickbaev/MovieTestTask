@@ -1,5 +1,6 @@
 package com.project.asmv.movietesttask.di.network
 
+import com.project.asmv.movietesttask.BuildConfig
 import com.project.asmv.movietesttask.network.ApiService
 import dagger.Module
 import dagger.Provides
@@ -15,7 +16,6 @@ import javax.inject.Singleton
 @Module
 class NetworkModule {
     companion object {
-        const val BASE_URL = "http://api.themoviedb.org/3/"
         const val TIMEOUT_CONNECT = 30000.toLong()
         const val TIMEOUT_READ = 30000.toLong()
     }
@@ -23,7 +23,7 @@ class NetworkModule {
     @Provides
     fun provideApiService(client: OkHttpClient): ApiService {
         return Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(BuildConfig.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(client)
