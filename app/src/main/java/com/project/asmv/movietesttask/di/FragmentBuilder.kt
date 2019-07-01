@@ -2,8 +2,8 @@ package com.project.asmv.movietesttask.di
 
 import com.project.asmv.movietesttask.di.movie_detail.MovieDetailModule
 import com.project.asmv.movietesttask.di.movie_list.MovieListModule
-import com.project.asmv.movietesttask.presentation.movie_detail.MovieDetailFragment
-import com.project.asmv.movietesttask.presentation.movie_list.MovieListFragment
+import com.project.asmv.movietesttask.presentation.movie_detail.view.MovieDetailFragment
+import com.project.asmv.movietesttask.presentation.movie_list.view.MovieListFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

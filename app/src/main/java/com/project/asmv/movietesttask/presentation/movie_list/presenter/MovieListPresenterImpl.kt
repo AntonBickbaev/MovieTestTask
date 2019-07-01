@@ -1,19 +1,15 @@
-package com.project.asmv.movietesttask.presentation.movie_list
+package com.project.asmv.movietesttask.presentation.movie_list.presenter
 
 import com.project.asmv.movietesttask.R
 import com.project.asmv.movietesttask.unit.base.BaseView
 import com.project.asmv.movietesttask.unit.data.movie_list.MovieInfo
 import com.project.asmv.movietesttask.domain.movie_list.PopularMovieInteractor
+import com.project.asmv.movietesttask.presentation.movie_list.view.MovieListView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import java.net.UnknownHostException
 import javax.inject.Inject
-
-interface MovieListPresenter : BaseView {
-    fun getMovieList()
-
-}
 
 class MovieListPresenterImpl @Inject constructor(
     private var movieListView: MovieListView,

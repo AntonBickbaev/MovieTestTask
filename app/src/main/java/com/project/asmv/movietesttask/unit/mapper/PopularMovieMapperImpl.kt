@@ -1,19 +1,13 @@
-package com.project.asmv.movietesttask.unit
+package com.project.asmv.movietesttask.unit.mapper
 
+import com.project.asmv.movietesttask.database.entity.PopularMovieEntity
 import com.project.asmv.movietesttask.unit.data.movie_details.MovieDetail
 import com.project.asmv.movietesttask.unit.data.movie_list.MovieInfo
 import com.project.asmv.movietesttask.unit.data.movie_list.PopularMovieItem
 import com.project.asmv.movietesttask.unit.data.movie_list.PopularMovieListResponse
-import com.project.asmv.movietesttask.database.entity.PopularMovieEntity
 import io.reactivex.Single
 import java.net.UnknownHostException
 import javax.inject.Inject
-
-interface PopularMovieMapper {
-    fun mapToMovieEntity(popularMovieListResponse: PopularMovieListResponse): Single<ArrayList<PopularMovieEntity>>
-    fun mapToMovieItem(throwable: Throwable? = null, popularMovieListEntity: List<PopularMovieEntity>): Single<MovieInfo>
-    fun mapToMovieDetail(popularMovieEntity: PopularMovieEntity): Single<MovieDetail>
-}
 
 class PopularMovieMapperImpl @Inject constructor() : PopularMovieMapper {
 

@@ -1,24 +1,13 @@
-package com.project.asmv.movietesttask.database.cache
+package com.project.asmv.movietesttask.database.cache.last_update_cache
 
 import com.project.asmv.movietesttask.database.DataBase
 import com.project.asmv.movietesttask.database.entity.LastUpdateEntity
-import com.project.asmv.movietesttask.unit.Units.createDateTo
 import io.reactivex.Single
 import java.util.*
 import javax.inject.Inject
 
-
-
-interface LastUpdateCache {
-
-    fun insert(lastUpdateEntity: LastUpdateEntity)
-
-    fun getLastTime(): Single<LastUpdateEntity>
-
-    fun deleteAll()
-}
-
-class LastUpdateCacheImpl @Inject constructor(private var database: DataBase) : LastUpdateCache {
+class LastUpdateCacheImpl @Inject constructor(private var database: DataBase) :
+    LastUpdateCache {
     override fun insert(lastUpdateEntity: LastUpdateEntity) {
         database.lastUpdateDao().insert(lastUpdateEntity)
     }

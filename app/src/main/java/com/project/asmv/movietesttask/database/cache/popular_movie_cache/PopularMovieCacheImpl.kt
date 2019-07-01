@@ -1,24 +1,13 @@
-package com.project.asmv.movietesttask.database.cache
+package com.project.asmv.movietesttask.database.cache.popular_movie_cache
 
 import com.project.asmv.movietesttask.database.DataBase
+import com.project.asmv.movietesttask.database.cache.last_update_cache.LastUpdateCache
 import com.project.asmv.movietesttask.database.entity.LastUpdateEntity
 import com.project.asmv.movietesttask.database.entity.PopularMovieEntity
 import com.project.asmv.movietesttask.unit.Units.createDateTo
 import io.reactivex.Single
 import java.util.*
 import javax.inject.Inject
-
-interface PopularMovieCache {
-
-    fun insert(popularMovieEntity: List<PopularMovieEntity>)
-
-    fun getPopularMovies(): Single<List<PopularMovieEntity>>
-
-    fun getPopularMovie(id: Long): Single<PopularMovieEntity>
-
-    fun deleteAll()
-
-}
 
 class PopularMovieCacheImpl @Inject constructor(
     private var database: DataBase,

@@ -3,8 +3,8 @@ package com.project.asmv.movietesttask.presentation
 import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
 import com.project.asmv.movietesttask.R
-import com.project.asmv.movietesttask.presentation.movie_detail.MovieDetailFragment
-import com.project.asmv.movietesttask.presentation.movie_list.MovieListFragment
+import com.project.asmv.movietesttask.presentation.movie_detail.view.MovieDetailFragment
+import com.project.asmv.movietesttask.presentation.movie_list.view.MovieListFragment
 import dagger.android.support.DaggerAppCompatActivity
 import dagger.android.support.DaggerFragment
 import kotlinx.android.synthetic.main.activity_main.*

@@ -1,4 +1,4 @@
-package com.project.asmv.movietesttask.presentation.movie_list
+package com.project.asmv.movietesttask.presentation.movie_list.view
 
 import android.content.Context
 import android.os.Bundle
@@ -9,13 +9,9 @@ import com.project.asmv.movietesttask.R
 import com.project.asmv.movietesttask.unit.base.BaseFragment
 import com.project.asmv.movietesttask.unit.data.movie_list.PopularMovieItem
 import com.project.asmv.movietesttask.presentation.MovieFragmentListener
+import com.project.asmv.movietesttask.presentation.movie_list.presenter.MovieListPresenter
 import kotlinx.android.synthetic.main.fragment_movie_list.*
 import javax.inject.Inject
-
-interface MovieListView {
-    fun completableList(popularMovieItemList: ArrayList<PopularMovieItem>)
-    fun errorSnackBar(text: Int)
-}
 
 class MovieListFragment : BaseFragment(), MovieListView {
 
@@ -46,7 +42,11 @@ class MovieListFragment : BaseFragment(), MovieListView {
         loadListFilm()
         context?.let {
             movieListAdapter =
-                MovieListAdapter(it) { popularMovieItem -> movieFragmentListener?.openMovieDetail(popularMovieItem.id) }
+                MovieListAdapter(it) { popularMovieItem ->
+                    movieFragmentListener?.openMovieDetail(
+                        popularMovieItem.id
+                    )
+                }
             movieList?.layoutManager = LinearLayoutManager(it)
             movieList?.adapter = movieListAdapter
         }

@@ -1,4 +1,4 @@
-package com.project.asmv.movietesttask.presentation.movie_list
+package com.project.asmv.movietesttask.presentation.movie_list.view
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView

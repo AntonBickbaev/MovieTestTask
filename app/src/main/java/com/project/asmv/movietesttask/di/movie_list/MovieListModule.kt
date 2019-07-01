@@ -2,14 +2,14 @@ package com.project.asmv.movietesttask.di.movie_list
 
 import com.project.asmv.movietesttask.domain.movie_list.PopularMovieInteractor
 import com.project.asmv.movietesttask.domain.movie_list.PopularMovieInteractorImpl
-import com.project.asmv.movietesttask.presentation.movie_list.MovieListFragment
-import com.project.asmv.movietesttask.presentation.movie_list.MovieListPresenter
-import com.project.asmv.movietesttask.presentation.movie_list.MovieListPresenterImpl
-import com.project.asmv.movietesttask.presentation.movie_list.MovieListView
+import com.project.asmv.movietesttask.presentation.movie_list.view.MovieListFragment
+import com.project.asmv.movietesttask.presentation.movie_list.presenter.MovieListPresenter
+import com.project.asmv.movietesttask.presentation.movie_list.presenter.MovieListPresenterImpl
+import com.project.asmv.movietesttask.presentation.movie_list.view.MovieListView
 import com.project.asmv.movietesttask.repository.movie_list.PopularMovieRepository
 import com.project.asmv.movietesttask.repository.movie_list.PopularMovieRepositoryImpl
-import com.project.asmv.movietesttask.unit.PopularMovieMapper
-import com.project.asmv.movietesttask.unit.PopularMovieMapperImpl
+import com.project.asmv.movietesttask.unit.mapper.PopularMovieMapper
+import com.project.asmv.movietesttask.unit.mapper.PopularMovieMapperImpl
 import dagger.Binds
 import dagger.Module
 

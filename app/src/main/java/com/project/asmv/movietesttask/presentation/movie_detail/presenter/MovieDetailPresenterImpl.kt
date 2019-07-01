@@ -1,16 +1,12 @@
-package com.project.asmv.movietesttask.presentation.movie_detail
+package com.project.asmv.movietesttask.presentation.movie_detail.presenter
 
-import com.project.asmv.movietesttask.unit.base.BaseView
-import com.project.asmv.movietesttask.unit.data.movie_details.MovieDetail
 import com.project.asmv.movietesttask.domain.movie_detail.MovieDetailInteractor
+import com.project.asmv.movietesttask.presentation.movie_detail.view.MovieDetailView
+import com.project.asmv.movietesttask.unit.data.movie_details.MovieDetail
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
-
-interface MovieDetailPresenter : BaseView {
-    fun getDetailMovie(id: Long)
-}
 
 class MovieDetailPresenterImpl @Inject constructor(
     private var movieDetailView: MovieDetailView,

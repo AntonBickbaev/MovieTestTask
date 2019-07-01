@@ -1,4 +1,4 @@
-package com.project.asmv.movietesttask.presentation.movie_detail
+package com.project.asmv.movietesttask.presentation.movie_detail.view
 
 import android.content.Context
 import android.os.Bundle
@@ -8,16 +8,12 @@ import com.project.asmv.movietesttask.R
 import com.project.asmv.movietesttask.unit.base.BaseFragment
 import com.project.asmv.movietesttask.unit.data.movie_details.MovieDetail
 import com.project.asmv.movietesttask.presentation.MovieFragmentListener
+import com.project.asmv.movietesttask.presentation.movie_detail.presenter.MovieDetailPresenter
 import kotlinx.android.synthetic.main.adapter_movie_list.imageCover
 import kotlinx.android.synthetic.main.fragment_movie_detail.*
 import javax.inject.Inject
 
-interface MovieDetailView {
-    fun setupDetail(movieDetail: MovieDetail)
-}
-
 class MovieDetailFragment : BaseFragment(), MovieDetailView {
-
 
     companion object {
 
