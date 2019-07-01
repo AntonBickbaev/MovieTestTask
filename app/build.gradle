@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.project.asmv.movietesttask"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$app_compat_version"
+    implementation "com.android.support:support-v4:$app_compat_version"
+    implementation "com.android.support:support-core-ui:$app_compat_version"
+
+    implementation "com.android.support.constraint:constraint-layout:$constraintLayout"
+    implementation "com.android.support:recyclerview-v7:$app_compat_version"
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    testImplementation 'org.mockito:mockito-core:2.7.6'
+    //dagger 2
+    implementation "com.google.dagger:dagger-android:$dagger_version"
+    implementation "com.google.dagger:dagger-android-support:$dagger_version"
+    // if you use the support libraries
+    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
+    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+
+    //rxjava libs start
+    implementation "io.reactivex.rxjava2:rxandroid:$io_reactivex_android_version"
+    implementation "io.reactivex.rxjava2:rxjava:$io_reactivex_java_version"
+    implementation "com.jakewharton.rxbinding2:rxbinding:$io_reactivex_binding_version"
+
+    implementation "com.squareup.retrofit2:retrofit:$squareupRetrofit2"
+    implementation "com.squareup.retrofit2:converter-gson:$squareupRetrofit2"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$squareupRetrofit2"
+    implementation "com.squareup.okhttp3:okhttp:$squareupOkhttp3"
+    implementation "com.squareup.okhttp3:logging-interceptor:$squareupOkhttp3"
+
+    kapt "android.arch.lifecycle:compiler:1.1.1"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    //room libs start
+    implementation "android.arch.persistence.room:runtime:$room_version"
+    kapt "android.arch.persistence.room:compiler:$room_version" // use kapt for Kotlin
+
+    // optional - RxJava support for Room
+    implementation "android.arch.persistence.room:rxjava2:$room_version"
+
+    // optional - Guava support for Room, including Optional and ListenableFuture
+    implementation "android.arch.persistence.room:guava:$room_version"
+
+    // Test helpers
+    testImplementation "android.arch.persistence.room:testing:$room_version"
+    implementation 'com.android.support:cardview-v7:28.0.0'
+
+    implementation 'com.facebook.stetho:stetho:1.5.0'
+    implementation 'com.android.support:design:28.0.0'
+
+    //room libs end
+}
